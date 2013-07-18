@@ -5,7 +5,17 @@ describe Onstar::Client do
     Onstar::Client::VERSION.should_not be_nil
   end
 
-  it 'should do something useful' do
-    false.should be_true
+  context "with oauth endpoint with valid credentials" do
+    let(:api_key) { ENV['GM_API_KEY'] }
+    let(:api_secret) { ENV['GM_SECRET_KEY'] }
+    let(:token)  { Onstar::Client.connect(api_key, api_secret) }
+
+    it "should recieve oauth token" do
+      expect(token).not_to be_nil
+    end
+   
+    it "should throw no errors"
+    it "should be able to access data from endpoint?"
   end
+
 end
