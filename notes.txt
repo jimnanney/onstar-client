@@ -1,0 +1,23 @@
+The token end point URL is https://developer.gm.com/oauth/access_token
+
+The client application needs to request and obtain the token from this
+endpoint by adding the following parameters using the
+“application/x-www-form-urlencoded” format in the HTTP request body:
+
+grant_type – REQUIRED, must be set to “client_credentials”
+
+Confidential clients or other clients issued client credentials MUST
+authenticate with the authorization server. Clients in possession of a client
+password must use the HTTP Basic authentication scheme as defined in [RFC2617]
+to authenticate with the authorization server. The client identifier is used
+as the username, and the client password is used as the password.
+i.e. Authorization:BasicczZCaGRSa3F0MzpnWDFmQmF0M2JW
+
+The client can choose to receive the response in either JSON, or XML by
+specifying the Accept HTTP
+header.
+
+
+https://github.com/intridea/oauth2
+
+
