@@ -5,7 +5,7 @@ describe Onstar::Client do
     Onstar::Client::VERSION.should_not be_nil
   end
 
-  context "with oauth endpoint with valid credentials" do
+  context "with oauth endpoint and valid credentials" do
     let(:api_key) { ENV['GM_API_KEY'] }
     let(:api_secret) { ENV['GM_SECRET_KEY'] }
     let(:token)  { Onstar::Client.connect(api_key, api_secret) }
@@ -16,6 +16,9 @@ describe Onstar::Client do
    
     it "should throw no errors"
     it "should be able to access data from endpoint?"
+    context "with subscriber account" do
+      it "should retrieve telemetry data"
+    end
   end
 
 end
