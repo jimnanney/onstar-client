@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Onstar::Client do
+describe Onstar do
   it 'should have a version number' do
-    Onstar::Client::VERSION.should_not be_nil
+    Onstar::VERSION.should_not be_nil
   end
 
   context "with oauth endpoint and valid credentials" do

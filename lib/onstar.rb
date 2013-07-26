@@ -1,0 +1,2 @@
+require 'onstar/client'
+
