@@ -20,4 +20,5 @@ header.
 
 https://github.com/intridea/oauth2
 
+oauth2 requires headers to be set in the client.connection.headers hash
 

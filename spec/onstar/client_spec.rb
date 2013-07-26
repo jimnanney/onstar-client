@@ -1,17 +1,19 @@
 require 'spec_helper'
 
-describe Onstar::Client do
+
+describe Onstar do
   it 'should have a version number' do
-    Onstar::Client::VERSION.should_not be_nil
+    Onstar::VERSION.should_not be_nil
   end
 
-  context "with oauth endpoint and valid credentials" do
+  context "with oauth endpoint and valid credentials", :vcr do
     let(:api_key) { ENV['GM_API_KEY'] }
     let(:api_secret) { ENV['GM_SECRET_KEY'] }
-    let(:token)  { Onstar::Client.connect(api_key, api_secret) }
+    let(:client)  { Onstar::Client.new(api_key, api_secret) }
 
     it "should recieve oauth token" do
-      expect(token).not_to be_nil
+      client.connect
+      expect(client.token).not_to be_nil
     end
    
     it "should throw no errors"
