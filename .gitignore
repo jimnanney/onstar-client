@@ -1,4 +1,6 @@
 *.gem
+.ruby-gemset
+.ruby-version*
 *.rbc
 .bundle
 .config
